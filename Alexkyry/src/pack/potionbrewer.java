@@ -2,11 +2,20 @@ package pack;
 
 import java.util.Scanner;
 
-public class potionbrewer {
+public class PotionBrewer {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String[] potions = {"Healing", "Regeneration", "Fire Resistance", "Swiftness","Night Vision","Invisibility","Leaping","Slowness","Water Breathing","Harming","Poison","Strength","Weakness","Turtle Master","Slow Falling","If You enter these wrong, Please Restart"};
+		String[] potions = {"Healing", "Regeneration", "Fire Resistance", "Swiftness","Night Vision","Invisibility","Leaping","Slowness","Water Breathing","Harming","Poison","Strength",
+				"Weakness","Turtle Master","Slow Falling"};
+		String[] recipes = {"Netherwart, Glistering Melon,(Redstone, Glowstone),(GunPowder, DragonsBreath)", "Netherwart,GhastTear,(Redstone, Glowstone),(GunPowder, DragonsBreath)",
+				"Netherwart,Magmacream,(Redstone, Glowstone),(GunPowder, DragonsBreath)", "Netherwart->Sugar->(Redstone, Glowstone)->(GunPowder, DragonsBreath)",
+				"Netherwart,GoldenCarrot,(Redstone, Glowstone),(GunPowder, DragonsBreath)", "Potion Of Night Vision, Fermented Spider Eye,(Redstone, Glowstone),(GunPowder, DragonsBreath) "
+				+ "Go look at the Night Vision recipe!", "Netherwart, RabbitsFoot,(Redstone, Glowstone),(GunPowder, DragonsBreath)", "Potion of Swiftness, Fermented Spider Eye, (Redstone, Glowstone),"
+				+ "(GunPowder, DragonsBreath) Go look at the Swiftness recipe", "Netherwart, PufferFish,(Redstone, Glowstone),(GunPowder, DragonsBreath)", "Poison Or Healing Potion, Fermented Spider Eye,"
+				+ "(Redstone, Glowstone),(GunPowder, DragonsBreath)", "Netherwart, SpiderEye,(Redstone, Glowstone),(GunPowder, DragonsBreath)", 
+				"Netherwart,BlazePowder,(Redstone, Glowstone),(GunPowder, DragonsBreath)", "WaterBottle, Fermented Spider Eye,(Redstone, Glowstone),(GunPowder, DragonsBreath)",
+				"Netherwart, TurtleHelmet,(Redstone, Glowstone),(GunPowder, DragonsBreath)", "Netherwart, PhantomMembrane,(Redstone, Glowstone),(GunPowder, DragonsBreath)"};
 		String[] mat = {"Fermented Spider Eye","TurtleHelm","BrewingStand","GoldenCarrot","MagmaCream","GlassBottles","GlisteningMelon","DragonsBreath"};
 		        
 		        Scanner i = new Scanner(System.in);  //Input anything.
@@ -21,6 +30,7 @@ public class potionbrewer {
 			        for(int l = 0; l < potions.length ; l++)  {
 			        	System.out.println(potions[l]);
 			        }
+			        System.out.println("If You enter these wrong, Please Restart");
 			        }
 				if(word.equalsIgnoreCase("Recipe List")) {
 
@@ -33,65 +43,13 @@ public class potionbrewer {
 				
 				String word2 = i2.nextLine(); 
 				
-				if(word2.equalsIgnoreCase("Swiftness")) {
-					
-					System.out.println("Netherwart->Sugar->(Redstone, Glowstone)->(GunPowder, DragonsBreath)");
+				for(int p = 0; p < potions.length; p++) {
+					if(word2.equalsIgnoreCase(potions[p])) {
+						System.out.println(recipes[p]);
+					}
 				}
-if(word2.equalsIgnoreCase("Strength")) {
-					
-					System.out.println("Netherwart,BlazePowder,(Redstone, Glowstone),(GunPowder, DragonsBreath)");
-				}
-if(word2.equalsIgnoreCase("Fire Resistance")) {
-	
-	System.out.println("Netherwart,Magmacream,(Redstone, Glowstone),(GunPowder, DragonsBreath)");
-}
-if(word2.equalsIgnoreCase("Healing")) {
-	
-	System.out.println("Netherwart, Glistering Melon,(Redstone, Glowstone),(GunPowder, DragonsBreath)");
-}
-if(word2.equalsIgnoreCase("Regeneration")) {
-	
-	System.out.println("Netherwart,GhastTear,(Redstone, Glowstone),(GunPowder, DragonsBreath)");
-}
-if(word2.equalsIgnoreCase("Night Vision")) {
-	
-	System.out.println("Netherwart,GoldenCarrot,(Redstone, Glowstone),(GunPowder, DragonsBreath)");
-}if(word2.equalsIgnoreCase("Invisibility")) {
-	
-	System.out.println("Potion Of Night Vision, Fermented Spider Eye,(Redstone, Glowstone),(GunPowder, DragonsBreath) Go look at the Night Vision recipe!");
-}
-if(word2.equalsIgnoreCase("Leaping")) {
-	
-	System.out.println("Netherwart, RabbitsFoot,(Redstone, Glowstone),(GunPowder, DragonsBreath)");
-}
-if(word2.equalsIgnoreCase("Slowness")) {
-	
-	System.out.println("Potion of Swiftness, Fermented Spider Eye, (Redstone, Glowstone),(GunPowder, DragonsBreath) Go look at the Swiftness recipe");
-}
-if(word2.equalsIgnoreCase("Water Breathing")) {
-	
-	System.out.println("Netherwart, PufferFish,(Redstone, Glowstone),(GunPowder, DragonsBreath)");
-}
-if(word2.equalsIgnoreCase("Harming")) {
-	
-	System.out.println("Poison Or Healing Potion, Fermented Spider Eye,(Redstone, Glowstone),(GunPowder, DragonsBreath)");
-}
-if(word2.equalsIgnoreCase("Poison")) {
-	
-	System.out.println("Netherwart, SpiderEye,(Redstone, Glowstone),(GunPowder, DragonsBreath)");
-}
-if(word2.equalsIgnoreCase("Turtle Master")) {
-	
-	System.out.println("Netherwart, TurtleHelmet,(Redstone, Glowstone),(GunPowder, DragonsBreath)");
-}
-if(word2.equalsIgnoreCase("Weakness")) {
-	
-	System.out.println("WaterBottle, Fermented Spider Eye,(Redstone, Glowstone),(GunPowder, DragonsBreath)");
-}
-if(word2.equalsIgnoreCase("Slow Falling")) {
-	
-	System.out.println("Netherwart, PhantomMembrane,(Redstone, Glowstone),(GunPowder, DragonsBreath)");
-}
+				
+				
 if(word2.equalsIgnoreCase("Fermented Spider Eye")) {
 	
 	System.out.println("Spider Eye, Sugar, Brown Mushroom");
@@ -144,4 +102,3 @@ String exitKey = ex.nextLine();
 					
 			}
 }
-
