@@ -17,88 +17,52 @@ public class PotionBrewer {
 				"Netherwart,BlazePowder,(Redstone, Glowstone),(GunPowder, DragonsBreath)", "WaterBottle, Fermented Spider Eye,(Redstone, Glowstone),(GunPowder, DragonsBreath)",
 				"Netherwart, TurtleHelmet,(Redstone, Glowstone),(GunPowder, DragonsBreath)", "Netherwart, PhantomMembrane,(Redstone, Glowstone),(GunPowder, DragonsBreath)"};
 		String[] mat = {"Fermented Spider Eye","TurtleHelm","BrewingStand","GoldenCarrot","MagmaCream","GlassBottles","GlisteningMelon","DragonsBreath"};
-		        
-		        Scanner i = new Scanner(System.in);  //Input anything.
-		        System.out.println("Type Potion List or Recipe List, To select your potion or recipe");
-				
-				String word = i.nextLine(); 
-				
-				System.out.println("Select Potion:"  );
+		String[] ingredients = {"Fermented Spider Eye", "GlisteningMelon", "GoldenCarrot", "MagmaCream", "BrewingStand", "GlassBottles", "TurtleHelm", "Dragons Breath"};
+		String[] iRecipes= {"Spider Eye, Sugar, Brown Mushroom", "Melon, 8 Gold nuggets", "Carrot, 8 Gold nuggets", "BlazePowder, SlimeBall", "3 Cobble, 1 BlazeRod", "3 Glass", "5 Scute", 
+				"Click Glass Bottle on the purple particle Spit effect during the Dragon boss"};
+			
+		boolean notFound = true;
+		while(notFound) {
+		
+			System.out.println("Select a potion or an ingredient to find its recipe. Type 'Recipe List' or potion list for each.");
+			
+	        Scanner i = new Scanner(System.in);  //Input anything.
+			
+			String word = i.nextLine(); 
 				
 				if(word.equalsIgnoreCase("Potion List")) {
 
 			        for(int l = 0; l < potions.length ; l++)  {
 			        	System.out.println(potions[l]);
 			        }
-			        System.out.println("If You enter these wrong, Please Restart");
-			        }
-				if(word.equalsIgnoreCase("Recipe List")) {
+				} 
+			    else if(word.equalsIgnoreCase("Recipe List")) {
 
-			        for(int r = 0; r < mat.length ; r++)  {
-			        	System.out.println(mat[r]);
-			        }
-			        }
-				
-		        Scanner i2 = new Scanner(System.in);  //Input anything.
-				
-				String word2 = i2.nextLine(); 
+				    for(int r = 0; r < mat.length ; r++)  {
+				        System.out.println(mat[r]);
+				    }
+			    }
 				
 				for(int p = 0; p < potions.length; p++) {
-					if(word2.equalsIgnoreCase(potions[p])) {
+					if(word.equalsIgnoreCase(potions[p])) {
 						System.out.println(recipes[p]);
+						notFound = false;
 					}
 				}
 				
-				
-if(word2.equalsIgnoreCase("Fermented Spider Eye")) {
-	
-	System.out.println("Spider Eye, Sugar, Brown Mushroom");
-}
-if(word2.equalsIgnoreCase("GlisteningMelon")) {
-	
-	System.out.println("Melon, 8 Gold nuggets");
-}
-	if(word2.equalsIgnoreCase("GoldenCarrot")) {
+				for(int p = 0; p < ingredients.length; p++) {
+					if(word.equalsIgnoreCase(ingredients[p])) {
+						System.out.println(iRecipes[p]);
+						notFound = false;
+					}
+				}
+		}		
+
+		System.out.print("Restart The Program, to select a new recipe");
 		
-		System.out.println("Carrot, 8 Gold nuggets");
-	}
-		if(word2.equalsIgnoreCase("MagmaCream")) {
-			
-			System.out.println("BlazePowder, SlimeBall");
-		}
-			if(word2.equalsIgnoreCase("BrewingStand")) {
-				
-				System.out.println("3 Cobble, 1 BlazeRod");
-			}
-					if(word2.equalsIgnoreCase("GlassBottles")) {
-						
-						System.out.println("3 Glass");
-					}
-if(word2.equalsIgnoreCase("TurtleHelm")) {
-						
-						System.out.println("5 Scute");
-						
-					}
-if(word2.equalsIgnoreCase("Dragons Breath")) {
-	
-	System.out.println("Click Glass Bottle on the purple particle Spit effect during the Dragon boss");
-}
-if(word2.equalsIgnoreCase("potion list")) {
-	
-	System.out.println("Please Restart");
-}
-if(word2.equalsIgnoreCase("recipe list")) {
-	
-	System.out.println("Please Restart");
-}
-System.out.println();
-System.out.print("Restart The Program, to select a new recipe");
-
-
-Scanner ex = new Scanner(System.in);
-
-String exitKey = ex.nextLine(); 
-
+		Scanner ex = new Scanner(System.in);
+		
+		String exitKey = ex.nextLine(); 
 					
 			}
 }
